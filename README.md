@@ -1,8 +1,10 @@
 # Quantitare::Categories
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/quantitare/categories`. To experiment with that code, run `bin/console` for an interactive prompt.
+Quantitare is a self-hosted personal dashboard application that gathers data from several external services. It is designed to be expandable, customizable, and hackable.
 
-TODO: Delete this and the text above, and describe your gem
+The basic unit of measurement for a point of data ingested by Quantitare is known as a "scrobble." Scrobbles are represented in the application as `ActiveRecord` objects, and they are all stored in the `scrobbles` table. Scrobbles are organized into categories, each of which determines the shape of their respective records in the database. Specifically, the `data` column in this table is a JSONB column that contains category-specific information to be used by the analytics engine or presentation engine in the app. In order for this data to be consistent from source to source, this gem provides validations for each of the categories in the core build of Quantitare.
+
+The data column is validated using [JSON schema](http://json-schema.org).
 
 ## Installation
 
@@ -40,4 +42,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Quantitare::Categories project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/quantitare-categories/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Quantitare::Categories project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/quantitare/quantitare-categories/blob/master/CODE_OF_CONDUCT.md).

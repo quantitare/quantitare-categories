@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scrobble Category - Music",
+  "description": "Data for a music track scrobble. If the user listens to a music track, a scrobble of this category is logged to Quantitare. It contains data for the track, the artist, and (if applicable) the album listened to.",
+
+  "type": "object",
+  "properties": {
+    "track": {
+      "description": "Basic information for the track",
+      "type": "object",
+      "properties": {
+        "mbid": {
+          "description": "The Musicbrainz ID for the track",
+          "type": "string"
+        },
+
+        "title": {
+          "description": "The title of the track",
+          "type": "string"
+        },
+
+        "duration": {
+          "description": "The duration of the track in milliseconds",
+          "type": "integer"
+        },
+
+        "album_rank": {
+          "description": "The ordering of the track in the album in which it appears",
+          "type": "integer"
+        }
+      },
+      "required": ["title", "duration"]
+    },
+
+    "artist": {
+      "description": "Basic information about the artist",
+      "type": "object",
+      "properties": {
+        "mbid": {
+          "description": "The Musicbrainz ID for the track's artist",
+          "type": "string"
+        },
+
+        "name": {
+          "description": "The name of the artist",
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    },
+
+    "album": {
+      "description": "Basic information about the album to which the track is associated, if one exists",
+      "type": "object",
+      "properties": {
+        "mbid": {
+          "description": "The Musicbrainz ID for the track's album",
+          "type": "string"
+        },
+
+        "title": {
+          "description": "The title of the track's album",
+          "type": "string"
+        },
+
+        "release_date": {
+          "description": "The date on which the album was released",
+          "type": "date"
+        },
+
+        "artist": {
+          "description": "The 'album artist' -- typically, this is the same as the track's artist, but this field provides flexibility in case those two values are different",
+          "type": "object",
+          "properties": {
+            "mbid": {
+              "description": "The album artist's Musicbrainz ID",
+              "type": "string"
+            },
+
+            "name": {
+              "description": "The album artist's name",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+
+    "image": {
+      "description": "The URL to closest image for the track. This is ideally the album art for the album with which the track is associated, but may be the artist's image instead",
+      "type": "object",
+      "properties": {
+        "small": {
+          "description": "The small image",
+          "type": ["string", "null"]
+        },
+
+        "medium": {
+          "description": "The medium image",
+          "type": ["string", "null"]
+        },
+
+        "large": {
+          "description": "The large image",
+          "type": ["string", "null"]
+        },
+
+        "original": {
+          "description": "The original image",
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["small", "medium", "large", "original"]
+    }
+  }
+}

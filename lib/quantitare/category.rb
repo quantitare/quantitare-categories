@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Quantitare
-  module Categories
-    VERSION = '0.1.0'
+  class Category
+    include Virtus::Model
   end
 end

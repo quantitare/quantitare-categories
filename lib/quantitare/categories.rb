@@ -1,7 +1,14 @@
-require "quantitare/categories/version"
+# frozen_string_literal: true
+
+require 'quantitare/categories/version'
 
 module Quantitare
+  ##
+  # = Quantitare Categories
+  #
   module Categories
-    # Your code goes here...
+    class << self
+
+    end
   end
 end
