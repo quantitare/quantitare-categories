@@ -3,8 +3,9 @@
 module Quantitare
   module Categories
     ##
-    # A representation of a music track listen. Contains the basic information about the track, including artist,
-    # album, and artwork, as well as some pointers with which Quantitare can gather more metadata about the track.
+    # A representation of a music track listened to by a user. Contains the basic information about the track,
+    # including artist, album, and artwork, as well as some pointers with which Quantitare can gather more metadata
+    # about the track.
     #
     class Music < Quantitare::Category
       specification do
@@ -18,9 +19,9 @@ module Quantitare
           required(:service_identifier).maybe(:string)
 
           required(:title).filled(:string)
-          required(:duration).filled(:integer) # The duration of the track in milliseconds
+          required(:duration).maybe(:integer) # The duration of the track in milliseconds
 
-          optional(:album_rank).value(:integer) # The ordering of the track in the album in which it appears
+          optional(:album_rank).maybe(:integer) # The ordering of the track in the album in which it appears
         end
 
         required(:artist).hash do
