@@ -90,7 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.16)
+  bundler (~> 2.0)
   pry
   quantitare-categories!
   rake (~> 10.0)
@@ -98,4 +98,4 @@ DEPENDENCIES
   rubocop
 
 BUNDLED WITH
-   1.17.2
+   2.0.2
