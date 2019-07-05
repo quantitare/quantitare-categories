@@ -8,7 +8,7 @@ module Quantitare
     #
     class BloodPressureDiastolic < Quantitare::Category
       specification do
-        required(:mmhg).filled(:float)
+        required(:mmhg).filled { float? | int? }
       end
     end
   end

@@ -7,7 +7,7 @@ module Quantitare
     #
     class ActiveCalorieBurn < Quantitare::Category
       specification do
-        required(:kcal).filled(:float)
+        required(:kcal).filled { float? | int? }
       end
     end
   end

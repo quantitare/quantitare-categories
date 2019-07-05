@@ -7,7 +7,7 @@ module Quantitare
     #
     class HeartRate < Quantitare::Category
       specification do
-        required(:bpm).filled(:float)
+        required(:bpm).filled { int? | float? }
       end
     end
   end

@@ -20,10 +20,12 @@ module Quantitare
 
         # The list under which the task was filed. Some apps use the term "project" or "context" to describe this
         # concept.
-        optional(:list).filled(:string)
+        optional(:list).maybe(:string)
 
         # Additional notes appended to the task
-        optional(:notes).value(:string)
+        optional(:notes).maybe(:string)
+
+        optional(:tags).array(:string)
       end
     end
   end

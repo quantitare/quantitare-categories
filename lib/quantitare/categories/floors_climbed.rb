@@ -7,7 +7,7 @@ module Quantitare
     #
     class FloorsClimbed < Quantitare::Category
       specification do
-        required(:count).filled(:float)
+        required(:count).filled { float? | int? }
       end
     end
   end

@@ -7,7 +7,7 @@ module Quantitare
     #
     class Weight < Quantitare::Category
       specification do
-        required(:kg).filled(:float)
+        required(:kg).filled { int? | float? }
       end
     end
   end

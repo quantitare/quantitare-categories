@@ -7,7 +7,7 @@ module Quantitare
     #
     class BodyTemperature < Quantitare::Category
       specification do
-        required(:degrees_celsius).filled(:float)
+        required(:degrees_celsius).filled { float? | int? }
       end
     end
   end

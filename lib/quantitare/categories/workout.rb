@@ -58,15 +58,16 @@ module Quantitare
       specification do
         required(:type).filled(included_in?: TYPES)
 
-        optional(:effective_duration).filled(:float) # Effective duration of the workout in seconds
-        optional(:calories).filled(:float) # Active calories burned in kcal
-        optional(:distance).filled(:float) # Distance travelled in meters, if applicable
+        optional(:effective_duration).filled { int? | float? } # Effective duration of the workout in seconds
+        optional(:calories).filled { int? | float? } # Active calories burned in kcal
+        optional(:distance).filled { int? | float? } # Distance travelled in meters, if applicable
         optional(:steps).filled(:integer) # Steps taken during the workout, if applicable
-        optional(:floors_climbed).filled(:float) # Number of floors' worth of elevation climbed during the workout
+        # Number of floors' worth of elevation climbed during the workout
+        optional(:floors_climbed).filled { int? | float? }
 
-        optional(:heart_rate_average).filled(:float) # Average heart rate in beats per minute
-        optional(:heart_rate_max).filled(:float) # Maximum heart rate in beats per minute
-        optional(:heart_rate_min).filled(:float) # Minimum heart rate in beats per minute
+        optional(:heart_rate_average).filled { int? | float? } # Average heart rate in beats per minute
+        optional(:heart_rate_max).filled { int? | float? } # Maximum heart rate in beats per minute
+        optional(:heart_rate_min).filled { int? | float? } # Minimum heart rate in beats per minute
 
         optional(:supplementary_statistics).hash # Type-specific statistics go here, such as swim laps or strokes
         optional(:analysis).hash # Some sources provide values that add some additional analysis to the workout

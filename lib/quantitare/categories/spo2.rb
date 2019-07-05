@@ -7,7 +7,7 @@ module Quantitare
     #
     class Spo2 < Quantitare::Category
       specification do
-        required(:percent).filled(:float)
+        required(:percent).filled { int? | float? }
       end
     end
   end
