@@ -13,7 +13,7 @@ module Quantitare
         # about the media.
         required(:service_source).maybe(:string)
 
-        required(:episode_title).filled(:sring)
+        required(:episode_title).filled(:string)
         required(:episode_identifier).maybe(:string)
 
         required(:show_title).filled(:string)
