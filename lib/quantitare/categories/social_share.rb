@@ -33,13 +33,13 @@ module Quantitare
           optional(:reshares).filled(:integer)
         end
 
-        required(:is_reshare).filled(:boolean)
+        required(:is_reshare).filled(:bool)
         optional(:reshare_info).hash do
           required(:resharee_username).filled(:string)
           optional(:resharee_display_name).filled(:string)
         end
 
-        required(:is_reply).filled(:boolean)
+        required(:is_reply).filled(:bool)
         optional(:reply_info).hash do
           required(:replyee_username).filled(:string)
           optional(:replyee_display_name).filled(:string)
