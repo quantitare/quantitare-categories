@@ -44,6 +44,11 @@ module Quantitare
           required(:replyee_username).filled(:string)
           optional(:replyee_display_name).filled(:string)
         end
+
+        optional(:location).hash do
+          required(:longitude).maybe(:float)
+          required(:latitude).maybe(:float)
+        end
       end
     end
   end
