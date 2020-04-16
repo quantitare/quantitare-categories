@@ -25,6 +25,8 @@ module Quantitare
         # Additional notes appended to the task
         optional(:notes).maybe(:string)
 
+        optional(:due_date).maybe(:date)
+
         optional(:tags).array(:string)
       end
     end
