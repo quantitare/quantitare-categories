@@ -8,6 +8,7 @@ module Quantitare
     #
     class Sleep < Quantitare::Category
       DEPTHS = [
+        D_AWAKE = 'awake',
         D_LIGHT = 'light',
         D_DEEP = 'deep',
         D_REM = 'rem'
