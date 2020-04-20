@@ -50,7 +50,7 @@ module Quantitare
       end
 
       def icon
-        {}
+        Icon.new
       end
 
       private
