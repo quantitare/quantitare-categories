@@ -6,7 +6,7 @@ module Quantitare
     # Represents time spent using a computing device over the scrobble's span of time.
     #
     class DeviceActivity < Quantitare::Category
-      DEVICE_TYPES = %w[computer phone tablet other].freeze
+      DEVICE_TYPES = %w[computer mobile phone tablet other].freeze
 
       specification do
         # The name of the activity; typically, the name of the application or website used.

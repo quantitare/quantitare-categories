@@ -38,7 +38,7 @@ module Quantitare
       end
 
       def schema
-        @schema ||= Dry::Schema.JSON(&specification_blk)
+        @schema ||= specification_blk && Dry::Schema.JSON(&specification_blk)
       end
 
       def specification(&blk)
@@ -85,6 +85,8 @@ module Quantitare
     end
 
     def valid?
+      return true unless schema
+
       schema.(data).errors.empty?
     end
 

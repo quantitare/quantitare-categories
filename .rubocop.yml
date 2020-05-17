@@ -7,11 +7,11 @@ AllCops:
 
 Metrics/BlockLength:
   Enabled: false
-Metrics/LineLength:
-  Max: 120
 
 # Layout
 
+Layout/LineLength:
+  Max: 120
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 Layout/MultilineOperationIndentation:
