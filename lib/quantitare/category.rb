@@ -38,7 +38,7 @@ module Quantitare
       end
 
       def schema
-        @schema ||= specification_blk && Dry::Schema.JSON(&specification_blk)
+        @schema ||= specification_blk && Dry::Schema.Params(&specification_blk)
       end
 
       def specification(&blk)
